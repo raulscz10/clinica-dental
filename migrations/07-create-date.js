@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       date: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
       },
       id_treatment: {
         type: Sequelize.INTEGER,
@@ -41,11 +41,11 @@ module.exports = {
         },
       },
       createdAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
       },
     });

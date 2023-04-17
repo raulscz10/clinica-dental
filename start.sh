@@ -45,6 +45,12 @@ sequelize seed:generate --name "seed-schedule"
 # Comando Para Crear Seed User
 sequelize seed:generate --name "seed-user"
 
+# Comando Para Crear Seed Consulta
+sequelize seed:generate --name "seed-inquiries"
+
+# Comando Para Crear Seed Cita
+sequelize seed:generate --name "seed-date"
+
 # ejecutar seed
 sequelize db:seed:all
 

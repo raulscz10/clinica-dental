@@ -22,7 +22,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       user_gmail: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true,
       },
       user_password: {
         type: Sequelize.STRING

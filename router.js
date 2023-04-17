@@ -2,16 +2,24 @@ const express = require("express");
 const router = express.Router();
 
 const indexRouter = require("./routes/index");
-const alumnosRouter = require("./routes/alumnos");
-//const nacionalidadesRouter = require("./routes/nacionalidades");
+const adminRouter = require("./routes/admin");
+const customerRouter = require("./routes/customer");
+const doctorRouter = require("./routes/doctor");
+const authRouter = require("./routes/auth");
 
 /* home page */
 router.use("/", indexRouter);
 
-/* alumnos */
-router.use("/api/alumnos", alumnosRouter);
-// router.use("/api/nacionalidades", nacionalidadesRouter);
-// router.use("/api/direcciones", direccionesRouter);
-// router.use("/api/queseyo", queseyoRouter);
+/* Doctor */
+router.use("/api/doctor", doctorRouter);
+
+/* Customer */
+router.use("/api/customer", customerRouter);
+
+/* Admin */
+router.use("/api/admin", adminRouter);
+
+/* Auth */
+router.use("/auth", authRouter);
 
 module.exports = router;

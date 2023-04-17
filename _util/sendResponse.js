@@ -1,4 +1,4 @@
-const sendSuccsessResponse = (res, code, data) => res.status(code).json(data);
+const sendSuccessResponse = (res, code, data) => res.status(code).json(data);
 
 const sendErrorResponse = (res, code, message, error = null) => {
    res.status(code).json({
@@ -9,6 +9,6 @@ const sendErrorResponse = (res, code, message, error = null) => {
 };
 
 module.exports = {
-   sendSuccsessResponse,
+   sendSuccessResponse,
    sendErrorResponse,
 };
