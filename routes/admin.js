@@ -9,21 +9,21 @@ const adminController = require("../controllers/adminController");
 router.get("/viewRolesAdmin", verifyToken, isAdmin, adminController.viewRolesAdmin);
 
 /* Ver Todas Las Direcciones */
-//router.get("/viewDirectionsAdmin", adminController.viewDirectionsAdmin);
+router.get("/viewDirectionsAdmin", adminController.viewDirectionsAdmin);
 
 /* Ver Todos Los Usuarios */
-//router.get("/viewUsersAdmin", adminController.viewUsersAdmin);
+router.get("/viewUsersAdmin", adminController.viewUsersAdmin);
 
 /* Ver Tod0s Los Tratamientos */
-//router.get("/viewTreatmentsAdmin", adminController.viewTreatmentsAdmin);
+router.get("/viewTreatmentsAdmin", adminController.viewTreatmentsAdmin);
 
 /* Ver Todos Los Horarios */
-//router.get("/viewSchedulesAdmin", adminController.viewSchedulesAdmin);
+router.get("/viewSchedulesAdmin", adminController.viewSchedulesAdmin);
 
 /* Ver Todas Las Consultas */
-//router.get("/viewInquiriesAdmin", adminController.viewInquiriesAdmin);
+router.get("/viewInquiriesAdmin", adminController.viewInquiriesAdmin);
 
 /* Ver Todas Las Citas */
-//router.get("", adminController.);
+router.get("/viewDatesAdmin", adminController.viewDatesAdmin);
 
 module.exports = router;
