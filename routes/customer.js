@@ -16,4 +16,7 @@ router.put("/updateUserDate/:id", customerController.updateUserDate);
 /*Eliminar Las Citas De un Cliente en Concreto*/
 router.delete("/deleteUserDates/:id", customerController.deleteUserDates);
 
+/* Ver Mi Perfil */
+router.get("/viewMyProfile/:id", customerController.viewMyProfile);
+
 module.exports = router;

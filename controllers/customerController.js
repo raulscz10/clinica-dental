@@ -21,7 +21,7 @@ const customerController = {};
 customerController.getUserDates = async (req, res) => {
   const { id } = req.params;
   try {
-    const customer = await Date.findAll({
+    const customers = await Date.findAll({
       where: { id_patient: id },
       attributes: {
         exclude: [
@@ -57,7 +57,7 @@ customerController.getUserDates = async (req, res) => {
         },
       ],
     });
-    sendSuccessResponse(res, 200, customer);
+    sendSuccessResponse(res, 200, customers);
   } catch (error) {
     let code = error.name == "SequelizeValidationError" ? 400 : 500;
     sendErrorResponse(res, code, "Error retreiving dates");
@@ -119,7 +119,41 @@ customerController.deleteUserDates = async (req, res) => {
 };
 
 
-console.log("Hola mundo!");
+/* Ver Un Perfil De Un Usuario */
+customerController.viewMyProfile = async (req, res) => {
+  const { id } = req.params;
+
+  try{
+    const custumer = await User.findByPk(id,{
+      attributes: {
+        exclude: [
+          "id_rol",
+          "id_street",
+          "createdAt",
+          "updatedAt",
+        ],
+      },
+
+      include:[
+        {
+          model: Direction,
+          as: "direction",
+          attributes: {
+            exclude: [
+              "createdAt",
+              "updatedAt",
+              "id"
+            ],
+          },
+        },
+      ],
+    });
+
+    if (custumer) sendSuccessResponse(res, 200, custumer);
+    else sendErrorResponse(res, 404, `Client '${id}' not found`);
+  }catch(error){
+    sendErrorResponse(res, 500, "Error retreinving client", error);
+  }
+}
 
 module.exports = customerController;
-
