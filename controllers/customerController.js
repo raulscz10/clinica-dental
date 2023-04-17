@@ -118,4 +118,8 @@ customerController.deleteUserDates = async (req, res) => {
   }
 };
 
+
+console.log("Hola mundo!");
+
 module.exports = customerController;
+
