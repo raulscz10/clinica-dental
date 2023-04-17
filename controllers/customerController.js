@@ -155,5 +155,5 @@ customerController.viewMyProfile = async (req, res) => {
     sendErrorResponse(res, 500, "Error retreinving client", error);
   }
 }
-
+//Prueba
 module.exports = customerController;
