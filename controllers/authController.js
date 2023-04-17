@@ -60,7 +60,7 @@ authController.login = async (req, res) => {
     const user = await User.findOne({ user_gmail: user_gmail });
 
     if (!user) {
-      return sendErrorResponse(res, 404, "User's email not exist");
+      return sendErrorResponse(res, 404, "Email's user doesn't exist");
     }
     const isValidPassword = compareHash(user_password, user.user_password);
 
