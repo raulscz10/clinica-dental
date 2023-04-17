@@ -1,30 +1,23 @@
 # GeeksHubs Students API
 
 <details>
-  <summary>Contenido 📝</summary>
+  <summary>Content 📝</summary>
   <ol>
-    <li><a href="#objetivo">Objetivo</a></li>
-    <li><a href="#sobre-el-proyecto">Sobre el proyecto</a></li>
+    <li><a href="#objetivo">Objetive</a></li>
     <li><a href="#deploy-🚀">Deploy</a></li>
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#diagrama-bd">Diagrama</a></li>
-    <li><a href="#instalación-en-local">Instalación</a></li>
+    <li><a href="#diagrama-bd">Diagram</a></li>
+    <li><a href="#instalación-en-local">Installation</a></li>
     <li><a href="#endpoints">Endpoints</a></li>
-    <li><a href="#futuras-funcionalidades">Futuras funcionalidades</a></li>
-    <li><a href="#contribuciones">Contribuciones</a></li>
-    <li><a href="#licencia">Licencia</a></li>
-    <li><a href="#webgrafia">Webgrafia</a></li>
-    <li><a href="#desarrollo">Desarrollo</a></li>
-    <li><a href="#agradecimientos">Agradecimientos</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#agradecimientos">The Team</a></li>
+    <li><a href="#contacto">Contact</a></li>
   </ol>
 </details>
 
-## Objetivo
-Este proyecto requería una API funcional conectada a una base de datos con al menos una relación de uno a muchos y una relación de muchos a muchos.
-
-## Sobre el proyecto
-Decidí crear una aplicación web para ayudar a los amantes del gimnasio, que les permitiría crear y realizar un seguimiento de nuevas rutinas para sus ejercicios diarios. He visto muchas apps de este estilo pero ninguna que nos permita cambiar tan libremente las rutinas adaptandolas a nuestras necesidades.    
+## Objective
+In this project, we have several objectives.
+1- Learn to work as a team through creating the project with a partner.
+2- Create the "back-end" of a dental clinic using "Sequelize".
 
 ## Deploy 🚀
 <div align="center">
@@ -32,7 +25,7 @@ Decidí crear una aplicación web para ayudar a los amantes del gimnasio, que le
 </div>
 
 ## Stack
-Tecnologías utilizadas:
+Used tools:
 <div align="center">
 <a href="https://sequelize.org/">
     <img src= "https://img.shields.io/badge/sequelize-323330?style=for-the-badge&logo=sequelize&logoColor=white"/>
@@ -49,112 +42,69 @@ Tecnologías utilizadas:
  </div>
 
 
-## Diagrama BD
+## DB Diagram
 !['imagen-db'](./_images/db.png)
 
-## Instalación en local
-1. Clonar el repositorio
-2. ` $ npm install `
-3. Conectamos nuestro repositorio con la base de datos 
-4. ``` $ Ejecutamos las migraciones ``` 
-5. ``` $ Ejecutamos los seeders ``` 
-6. ``` $ npm run dev ``` 
-7. ...
-
+## Local installation
+1. Clone the repository
+2. npm install
+3. We connect our repository with the database
+4. Execute the command npm run db-reset
+5. npm run dev
 ## Endpoints
-<details>
-<summary>Endpoints</summary>
+ · End-point Para Mostrar Las Citas De Un Usuario
+ ```
+ http://127.0.0.1:3000/api/customer/viewDates/3
+ ```
+· End-point Para Mostrar El Perfil De Un Usuario
+```
+http://127.0.0.1:3000/api/customer/viewMyProfile/3
+```
+· End-point Para Hacer El Login
+```
+http://127.0.0.1:3000/auth/login
+```
+· End-point Para Hacer El Registro
+```
+http://127.0.0.1:3000/auth/register
+```
+· End-point Para Que Un Usuario Elimine Una Cita
+```
+http://127.0.0.1:3000/api/customer/deleteUserDates/1
+```
+· End-point Para Que Un Usuario Modifique Una Cita
+```
+http://127.0.0.1:3000/api/customer/updateUserDate/1
+```
+· End-point Para Que Un Usuario Admin Vea Todos Los Usuarios
+```
+http://127.0.0.1:3000/api/admin/viewUsersAdmin
+```
+· End-point Para Que Un Usuario Admin Vea Todos Las Citas
+```
+http://127.0.0.1:3000/api/admin/viewDatesAdmin
+```
+· End-point Para Que Un Usuario Cree Una Cita
+```
+http://127.0.0.1:3000/api/customer/newUserDate
+```
 
-- AUTH
-    - REGISTER
+## The Team:
+First succesful teamwork done by:
 
-            POST http://localhost:3000/auth/register
-        body:
-        ``` js
-            {
-                "user": "David",
-                "email": "david@david.com",
-                "password": "princes"
-            }
-        ```
 
-    - LOGIN
+- *Raúl Santacruz*  
+<a href="https://github.com/raulscz10" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a> 
 
-            POST http://localhost:3000/auth/login  
-        body:
-        ``` js
-            {
-                "user": "David",
-                "email": "david@david.com",
-                "password": "princes"
-            }
-        ```
-- RUTINAS
-    - RECUPERAR RUTINAS  
+- **Leyre Romero**  
+<a href="https://github.com/leyreromero" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>
 
-            GET http://localhost:3000/api/rutina
 
-    - ...
-</details>
+## Contact
+<a href = "mailto:raulscz10@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/ra%C3%BAl-santacruz-b062241a1/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+</p>
 
-## Futuras funcionalidades
-[ ] Añadir create book  
-[ ] Añadir logs  con winston  
-[ ] Validaciones de la solicitud con express-validator  
-[ ] ...
-
-## Contribuciones
-Las sugerencias y aportaciones son siempre bienvenidas.  
-
-Puedes hacerlo de dos maneras:
-
-1. Abriendo una issue
-2. Crea un fork del repositorio
-    - Crea una nueva rama  
-        ```
-        $ git checkout -b feature/nombreUsuario-mejora
-        ```
-    - Haz un commit con tus cambios 
-        ```
-        $ git commit -m 'feat: mejora X cosa'
-        ```
-    - Haz push a la rama 
-        ```
-        $ git push origin feature/nombreUsuario-mejora
-        ```
-    - Abre una solicitud de Pull Request
-
-## Licencia
-Este proyecto se encuentra bajo licencia de "Mi Nombre"
-
-## Webgrafia:
-Para conseguir mi objetivo he recopilado información de:
-- link a repositorios 
-- link a documentacion de librerias externas
-- ...
-
-## Desarrollo:
-
-``` js
- const developer = "datata";
-
- console.log("Desarrollado por: " + datata);
-```  
-
-## Agradecimientos:
-
-Agradezco a mis compañeros el tiempo dedicado a este proyecto:
-
-- *Jose*  
-<a href="https://github.com/Dave86dev" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a> 
-
-- **David**  
-<a href="https://www.github.com/userGithub/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>
-
-- ***Mara***  
-<a href="https://www.github.com/userGithub/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a> 
-
-## Contacto
-<a href = "mailto:micorreoelectronico@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-<a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href = "romeroleyredev@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/leyre-romero-24928426b/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </p>
