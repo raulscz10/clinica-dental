@@ -124,7 +124,7 @@ customerController.viewMyProfile = async (req, res) => {
   const { id } = req.params;
 
   try{
-    const custumer = await User.findByPk(id,{
+    const customer = await User.findByPk(id,{
       attributes: {
         exclude: [
           "id_rol",
@@ -149,7 +149,7 @@ customerController.viewMyProfile = async (req, res) => {
       ],
     });
 
-    if (custumer) sendSuccessResponse(res, 200, custumer);
+    if (customer) sendSuccessResponse(res, 200, customer);
     else sendErrorResponse(res, 404, `Client '${id}' not found`);
   }catch(error){
     sendErrorResponse(res, 500, "Error retreinving client", error);

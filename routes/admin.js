@@ -26,4 +26,7 @@ router.get("/viewInquiriesAdmin", adminController.viewInquiriesAdmin);
 /* Ver Todas Las Citas */
 router.get("/viewDatesAdmin", adminController.viewDatesAdmin);
 
+/* Modificar Un Usuario */
+router.put("/updateUserAdmin/:id", adminController.updateUserAdmin);
+
 module.exports = router;
