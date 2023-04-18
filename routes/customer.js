@@ -19,4 +19,7 @@ router.delete("/deleteUserDates/:id", customerController.deleteUserDates);
 /* Ver Mi Perfil */
 router.get("/viewMyProfile/:id", customerController.viewMyProfile);
 
+/* Modificar Mi Perfil */
+router.put("/updateUserProfile/:id", customerController.updateUserProfile);
+
 module.exports = router;

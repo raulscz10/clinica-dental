@@ -118,13 +118,12 @@ customerController.deleteUserDates = async (req, res) => {
   }
 };
 
-
 /* Ver Un Perfil De Un Usuario */
 customerController.viewMyProfile = async (req, res) => {
   const { id } = req.params;
 
-  try{
-    const customer = await User.findByPk(id,{
+  try {
+    const customer = await User.findByPk(id, {
       attributes: {
         exclude: [
           "user_password",
@@ -135,16 +134,12 @@ customerController.viewMyProfile = async (req, res) => {
         ],
       },
 
-      include:[
+      include: [
         {
           model: Direction,
           as: "direction",
           attributes: {
-            exclude: [
-              "createdAt",
-              "updatedAt",
-              "id"
-            ],
+            exclude: ["createdAt", "updatedAt", "id"],
           },
         },
       ],
@@ -152,9 +147,29 @@ customerController.viewMyProfile = async (req, res) => {
 
     if (customer) sendSuccessResponse(res, 200, customer);
     else sendErrorResponse(res, 404, `Client '${id}' not found`);
-  }catch(error){
+  } catch (error) {
     sendErrorResponse(res, 500, "Error retreinving client", error);
   }
-}
-//Prueba
+};
+
+/* Modificar Mi Perfil */
+customerController.updateUserProfile = async (req, res) => {
+  const { id } = req.params;
+  const user = {
+    ...req.body,
+    updatedAt: new Date(),
+  };
+  try {
+    const num = await User.update(user, {
+      where: { id: id },
+    });
+    if (num == 1)
+      sendSuccessResponse(res, 201, "User profile updated successfully");
+    else sendErrorResponse(res, 400, "Profile updating process failed");
+  } catch (error) {
+    let code = error.name == "SequelizeValidationError" ? 400 : 500;
+    sendErrorResponse(res, code, `Error updating profile ${id}`, error);
+  }
+};
+
 module.exports = customerController;
