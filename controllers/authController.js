@@ -75,7 +75,6 @@ authController.login = async (req, res) => {
       message: "User logged succesfully",
       token,
       role: user.role,
-      user,
     });
   } catch (error) {
     sendErrorResponse(res, 500, "User login failed", error);

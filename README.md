@@ -1,10 +1,9 @@
-# GeeksHubs Students API
+# GeeksHubs Dental Clinic Back-end
 
 <details>
   <summary>Content 📝</summary>
   <ol>
     <li><a href="#objetivo">Objetive</a></li>
-    <li><a href="#deploy-🚀">Deploy</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#diagrama-bd">Diagram</a></li>
     <li><a href="#instalación-en-local">Installation</a></li>
@@ -18,11 +17,6 @@
 In this project, we have several objectives.
 1- Learn to work as a team through creating the project with a partner.
 2- Create the "back-end" of a dental clinic using "Sequelize".
-
-## Deploy 🚀
-<div align="center">
-    <a href="https://www.google.com"><strong>Url a producción </strong></a>🚀🚀🚀
-</div>
 
 ## Stack
 Used tools:
@@ -88,15 +82,47 @@ http://127.0.0.1:3000/api/admin/viewDatesAdmin
 ```
 http://127.0.0.1:3000/api/customer/newUserDate
 ```
+· End-point Par Que Un Usuario Admin Vea Todos Los Roles
+```
+http://127.0.0.1:3000/api/admin/viewRolesAdmin
+```
+· End-point Par Que Un Usuario Admin Vea Todas Las Direciones
+```
+http://127.0.0.1:3000/api/admin/viewDirectionsAdmin
+```
+· End-point Par Que Un Usuario Admin Vea Todos Los Horarios
+```
+http://127.0.0.1:3000/api/admin/viewSchedulesAdmin
+```
+·End-point Par Que Un Usuario Admin Vea Todos Los Tratamientos
+```
+http://127.0.0.1:3000/api/admin/viewTreatmentsAdmin
+```
+· End-point Para Que Un Doctor Vea Sus Citas
+```
+http://127.0.0.1:3000/api/doctor/viewDoctorDates/1
+```
+· End-point Para Que Un Doctor Vea A Sus Pacientes
+```
+http://127.0.0.1:3000/api/doctor/viewDoctorPatients/1
+```
+· End-point Par Que Un Usuario Admin Modifique Los Usuarios
+```
+http://127.0.0.1:3000/api/admin/updateUserAdmin/3
+```
+· End-point para que un Usuario Modifique Su Perfil
+```
+http://127.0.0.1:3000/api/customer/updateUserProfile/3
+```
 
 ## The Team:
 First succesful teamwork done by:
 
 
-- *Raúl Santacruz*  
-<a href="https://github.com/raulscz10" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a> 
+- *Raúl Santacruz*
+<a href="https://github.com/raulscz10" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
 
-- **Leyre Romero**  
+- **Leyre Romero**
 <a href="https://github.com/leyreromero" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>
 
 
@@ -106,5 +132,5 @@ First succesful teamwork done by:
 </p>
 
 <a href = "romeroleyredev@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-<a href="https://www.linkedin.com/in/leyre-romero-24928426b/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href="https://www.linkedin.com/in/leyre-romero-24928426b/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 </p>
