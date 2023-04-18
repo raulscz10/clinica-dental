@@ -127,6 +127,7 @@ customerController.viewMyProfile = async (req, res) => {
     const customer = await User.findByPk(id,{
       attributes: {
         exclude: [
+          "user_password",
           "id_rol",
           "id_street",
           "createdAt",
