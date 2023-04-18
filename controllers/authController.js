@@ -58,6 +58,7 @@ authController.login = async (req, res) => {
 
   try {
     const user = await User.findOne({ user_gmail: user_gmail });
+    console.log(user);
 
     if (!user) {
       return sendErrorResponse(res, 404, "Email's user doesn't exist");
@@ -68,12 +69,13 @@ authController.login = async (req, res) => {
       return sendErrorResponse(res, 401, "Bad credentials");
     }
 
-    const token = generateToken({ id: user.id, id_rol: user.id_role });
+    const token = generateToken({ user_id: user.id, user_rol: user.id_rol });
 
     sendSuccessResponse(res, 200, {
       message: "User logged succesfully",
       token,
       role: user.role,
+      user,
     });
   } catch (error) {
     sendErrorResponse(res, 500, "User login failed", error);

@@ -9,24 +9,24 @@ const adminController = require("../controllers/adminController");
 router.get("/viewRolesAdmin", verifyToken, isAdmin, adminController.viewRolesAdmin);
 
 /* Ver Todas Las Direcciones */
-router.get("/viewDirectionsAdmin", adminController.viewDirectionsAdmin);
+router.get("/viewDirectionsAdmin", verifyToken, isAdmin, adminController.viewDirectionsAdmin);
 
 /* Ver Todos Los Usuarios */
-router.get("/viewUsersAdmin", adminController.viewUsersAdmin);
+router.get("/viewUsersAdmin", verifyToken, isAdmin, adminController.viewUsersAdmin);
 
 /* Ver Tod0s Los Tratamientos */
-router.get("/viewTreatmentsAdmin", adminController.viewTreatmentsAdmin);
+router.get("/viewTreatmentsAdmin", verifyToken, isAdmin, adminController.viewTreatmentsAdmin);
 
 /* Ver Todos Los Horarios */
-router.get("/viewSchedulesAdmin", adminController.viewSchedulesAdmin);
+router.get("/viewSchedulesAdmin", verifyToken, isAdmin, adminController.viewSchedulesAdmin);
 
 /* Ver Todas Las Consultas */
-router.get("/viewInquiriesAdmin", adminController.viewInquiriesAdmin);
+router.get("/viewInquiriesAdmin", verifyToken, isAdmin, adminController.viewInquiriesAdmin);
 
 /* Ver Todas Las Citas */
-router.get("/viewDatesAdmin", adminController.viewDatesAdmin);
+router.get("/viewDatesAdmin", verifyToken, isAdmin, adminController.viewDatesAdmin);
 
 /* Modificar Un Usuario */
-router.put("/updateUserAdmin/:id", adminController.updateUserAdmin);
+router.put("/updateUserAdmin/:id", verifyToken, isAdmin, adminController.updateUserAdmin);
 
 module.exports = router;
