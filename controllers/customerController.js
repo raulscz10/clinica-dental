@@ -157,6 +157,7 @@ customerController.updateUserProfile = async (req, res) => {
   const { id } = req.params;
   const user = {
     ...req.body,
+    id_rol: 3,
     updatedAt: new Date(),
   };
   try {
