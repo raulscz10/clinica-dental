@@ -46,74 +46,130 @@ Used tools:
 4. Execute the command npm run db-reset
 5. npm run dev
 ## Endpoints
- · End-point Para Mostrar Las Citas De Un Usuario
- ```
- http://127.0.0.1:3000/api/customer/viewDates/3
- ```
-· End-point Para Mostrar El Perfil De Un Usuario
-```
-http://127.0.0.1:3000/api/customer/viewMyProfile/3
-```
-· End-point Para Hacer El Login
-```
-http://127.0.0.1:3000/auth/login
-```
-· End-point Para Hacer El Registro
-```
-http://127.0.0.1:3000/auth/register
-```
-· End-point Para Que Un Usuario Elimine Una Cita
-```
-http://127.0.0.1:3000/api/customer/deleteUserDates/1
-```
-· End-point Para Que Un Usuario Modifique Una Cita
-```
-http://127.0.0.1:3000/api/customer/updateUserDate/1
-```
-· End-point Para Que Un Usuario Admin Vea Todos Los Usuarios
-```
-http://127.0.0.1:3000/api/admin/viewUsersAdmin
-```
-· End-point Para Que Un Usuario Admin Vea Todos Las Citas
-```
-http://127.0.0.1:3000/api/admin/viewDatesAdmin
-```
-· End-point Para Que Un Usuario Cree Una Cita
-```
-http://127.0.0.1:3000/api/customer/newUserDate
-```
-· End-point Par Que Un Usuario Admin Vea Todos Los Roles
-```
-http://127.0.0.1:3000/api/admin/viewRolesAdmin
-```
-· End-point Par Que Un Usuario Admin Vea Todas Las Direciones
-```
-http://127.0.0.1:3000/api/admin/viewDirectionsAdmin
-```
-· End-point Par Que Un Usuario Admin Vea Todos Los Horarios
-```
-http://127.0.0.1:3000/api/admin/viewSchedulesAdmin
-```
-·End-point Par Que Un Usuario Admin Vea Todos Los Tratamientos
-```
-http://127.0.0.1:3000/api/admin/viewTreatmentsAdmin
-```
-· End-point Para Que Un Doctor Vea Sus Citas
-```
-http://127.0.0.1:3000/api/doctor/viewDoctorDates/1
-```
-· End-point Para Que Un Doctor Vea A Sus Pacientes
-```
-http://127.0.0.1:3000/api/doctor/viewDoctorPatients/1
-```
-· End-point Par Que Un Usuario Admin Modifique Los Usuarios
-```
-http://127.0.0.1:3000/api/admin/updateUserAdmin/3
-```
-· End-point para que un Usuario Modifique Su Perfil
-```
-http://127.0.0.1:3000/api/customer/updateUserProfile/3
-```
+<details>
+<summary>END-POINTS</summary>
+
+- AUTH
+    - Registrar alumno
+
+            POST http://127.0.0.1:3000/auth/signin
+        body:
+        ``` js
+            {
+                "user_name":"Prueba",
+                "user_surname":"Prueba",
+                "user_age":"25",
+                "user_phone":"12345678",
+                "user_gmail":"prueba@gmail.com",
+                "user_password":"1234"
+            }
+        ```
+
+    - Login
+
+            POST http://127.0.0.1:3000/auth/login
+        body:
+        ``` js
+            {
+                "user_gmail": "eugeni@admin.com",
+                "user_password": "root"
+            }
+        ```
+- ADMIN
+    - Obtener todos los roles
+
+            GET http://127.0.0.1:3000/api/admin/viewRolesAdmin
+
+    - Obtener todas las direcciones
+
+            GET http://127.0.0.1:3000/api/admin/viewDirectionsAdmin
+
+    - Obtener todos los horarios
+
+            GET http://127.0.0.1:3000/api/admin/viewSchedulesAdmin
+
+    - Obtener todos los tratamientos
+
+            GET http://127.0.0.1:3000/api/admin/viewTreatmentsAdmin
+
+    - Obtener todos los usuarios
+
+            GET http://127.0.0.1:3000/api/admin/viewUsersAdmin
+
+    - Obtener todos las consultas
+
+            GET http://127.0.0.1:3000/api/admin/viewInquiriesAdmin
+
+    - Obtener todas las citas
+
+            GET http://127.0.0.1:3000/api/admin/viewDatesAdmin
+
+    - Modificar Un Usuario
+
+            POST http://127.0.0.1:3000/api/admin/updateUserAdmin/3
+          body:
+          ``` js
+              {
+                "id_rol": 2
+              }
+          ```
+- DOCTOR
+    - Ver sus citas
+
+            GET http://127.0.0.1:3000/api/doctor/viewDoctorDates/1
+
+    - Ver sus pacientes
+
+            GET http://127.0.0.1:3000/api/doctor/viewDoctorPatients/1
+- CLIENTE
+    - Ver su Perfil
+
+            GET http://127.0.0.1:3000/api/customer/viewMyProfile/3
+
+    - Ver sus citas
+
+            GET http://127.0.0.1:3000/api/customer/viewDates/3
+
+    - Crear una cita
+
+            POST http://127.0.0.1:3000/api/customer/newUserDate
+          body:
+          ``` js
+              {
+                  "date": "2023-04-18",
+                  "id_treatment": 2,
+                  "id_patient": 3,
+                  "id_schedule": 2,
+                  "id_inquiries": 1
+              }
+          ```
+
+    - Modificar una cita
+
+            PUT http://127.0.0.1:3000/api/customer/updateUserDate/1
+          body:
+          ``` js
+              {
+                  "id_treatment": 6
+              }
+          ```
+
+    - Modificar su Perfil
+
+            PUT http://127.0.0.1:3000/api/customer/updateUserProfile/3
+          body:
+          ``` js
+              {
+                  "user_name": "Laura",
+                  "user_age": 24
+              }
+          ```
+
+    - Eliminar una cita
+    
+            DELETE http://127.0.0.1:3000/api/customer/deleteUserDates/1
+
+</details>
 
 ## The Team:
 First succesful teamwork done by:
