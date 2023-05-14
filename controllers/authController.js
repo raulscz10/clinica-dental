@@ -57,7 +57,7 @@ authController.login = async (req, res) => {
   }
 
   try {
-    const user = await User.findOne({ user_gmail: user_gmail });
+    const user = await User.findOne( { where: {user_gmail: user_gmail }});
     console.log(user);
 
     if (!user) {
