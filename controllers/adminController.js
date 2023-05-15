@@ -52,6 +52,13 @@ adminController.viewUsersAdmin = async (req, res) => {
       attributes: {
         exclude: ["createdAt", "updatedAt"],
       },
+      include: [
+        {
+           model: Direction,
+           as: "direction",
+           exclude: ["createdAt", "updatedAt"],
+        },
+     ],
     });
     sendSuccessResponse(res, 200, listUsers);
   } catch (error) {
