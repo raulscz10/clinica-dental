@@ -117,8 +117,45 @@ adminController.viewDatesAdmin = async (req, res) => {
   try {
     const listDates = await Date.findAll({
       attributes: {
-        exclude: ["createdAt", "updatedAt"],
+        exclude: [
+          "id_treatment",
+          "id_patient",
+          "id_schedule",
+          "id_inquiries",
+          "createdAt",
+          "updatedAt",
+        ],
       },
+      include: [
+        {
+          model: Treatment,
+          as: "treatment",
+          attributes: {
+            exclude: ["createdAt", "updatedAt", "id"],
+          },
+        },
+        {
+          model: Schedule,
+          as: "schedule",
+          attributes: {
+            exclude: ["createdAt", "updatedAt", "id"],
+          },
+        },
+        {
+          model: Inquiries,
+          as: "inquirie",
+          attributes: {
+            exclude: ["createdAt", "updatedAt", "id"],
+          },
+        },
+        {
+          model: User,
+          as: "patient",
+          attributes: {
+            exclude: ["createdAt", "updatedAt", "id"],
+          },
+        }
+      ],
     });
     sendSuccessResponse(res, 200, listDates);
   } catch (error) {
